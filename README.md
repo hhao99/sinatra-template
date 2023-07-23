@@ -1,13 +1,13 @@
 # Sinatra Application Template
 
 A base Sinatra application template. Just fork and build. Yay!
-Includes Bundler, DataMapper, and RSpec, all ready to go.
+Includes Bundler, Sequel, and RSpec, all ready to go.
 
 ## Configuration
 
 Dependencies and all configuration is done in <tt>environment.rb</tt>. Your
-database is also set up here. DataMapper will use sqlite3 by default. Tests
-use the sqlite3-memory adapter (no configuration needed).
+database is also set up here. 
+DataMapper stopped developing, we will use sequel instead.
 
 Add your controller actions in <tt>application.rb</tt>. Views for these actions
 are placed in the <tt>views</tt> directory. Static files, including a stock
@@ -28,7 +28,7 @@ a sample model, which can be removed). To run the specs:
 ## Getting Started
 
     bundle install
-    bundle exec foreman start
+    bundle exec rackup start
 
 ## Extras
 
