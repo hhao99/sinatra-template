@@ -1,18 +1,14 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'json', '>= 1.8.3'
+gem 'sinatra-contrib'
+
+gem 'thin'
+
 gem 'dotenv'
 gem 'rake'
-gem 'data_mapper'
-gem 'dm-core'
-gem 'dm-sqlite-adapter'
-gem 'dm-timestamps'
-gem 'dm-validations'
-gem 'dm-aggregates'
-gem 'dm-migrations'
 
 group :development do
-  gem 'foreman'
+  gem 'sinatra-contrib'
 end
 
 group :test do

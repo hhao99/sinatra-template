@@ -1,11 +1,17 @@
 require "rubygems"
 require "bundler/setup"
 require "sinatra"
+require "sinatra/reloader"
+
 require File.join(File.dirname(__FILE__), "environment")
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
   set :show_exceptions, :after_handler
+end
+
+configure :development do
+  register Sinatra::Reloader
 end
 
 configure :production, :development do
@@ -18,6 +24,5 @@ end
 
 # root page
 get "/" do
-  @profiles = Profile.all
   erb :root
 end
