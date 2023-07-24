@@ -1,6 +1,8 @@
-require File.join(File.dirname(__FILE__), 'application')
+require File.join(File.dirname(__FILE__), 'boot.rb')
+require File.join(File.dirname(__FILE__), 'application.rb')
 
-set :run, false
-set :environment, :production
+# controllers
 
-run Sinatra::Application
+map ('/admin') { run AdminApp }
+map ('/api') { run ApiApp }
+map ('/') { run SiteApp }

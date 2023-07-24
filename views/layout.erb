@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title || SiteConfig.title %></title>
+    <title><%= @title %></title>
     <link href="/main.css" rel="stylesheet" type="text/css"></link>
   </head>
   <body>
@@ -9,7 +9,7 @@
       <div class="header">
         <div class="logo">
           <h1>
-            <a href="/"><%= SiteConfig.title %></a>
+            <a href="/"><%= @title %></a>
             </h1>
         </div>
       </div>
@@ -17,7 +17,7 @@
         <%= yield %>
       </div>
       <div class="footer">
-        <p class="legal">&mdash; &copy; <%= Time.now.strftime("%Y") %> <%= SiteConfig.author %> &mdash;</p>
+        <p class="legal">&mdash; &copy; <%= Time.now.strftime("%Y") %> by Eric Hao &mdash;</p>
       </div>
     </div>
   </body>

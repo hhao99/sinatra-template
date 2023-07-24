@@ -1,0 +1,2 @@
+class ApiApp < App
+end

@@ -1,14 +1,19 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'require_all'
+gem 'sequel'
+gem 'sqlite3'
 
-gem 'thin'
+gem 'puma'
 
 gem 'dotenv'
 gem 'rake'
 
 group :development do
   gem 'sinatra-contrib'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'better_errors'
 end
 
 group :test do

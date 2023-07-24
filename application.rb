@@ -1,28 +1,39 @@
-require "rubygems"
-require "bundler/setup"
-require "sinatra"
-require "sinatra/reloader"
+require 'sinatra'
 
-require File.join(File.dirname(__FILE__), "environment")
+class App < Sinatra::Base
+  helpers do
+    def output(obj,status=200) 
+      halt code, obj.to_json if obj.present
+      return false
+    end
 
-configure do
-  set :views, "#{File.dirname(__FILE__)}/views"
-  set :show_exceptions, :after_handler
-end
+    def debug 
+      require 'pry-remote'; binding.remote_pry
+    end
+  end
 
-configure :development do
-  register Sinatra::Reloader
-end
+  configure do
+    set :views, "#{File.dirname(__FILE__)}/views"
+    set :public_foler, 'public'
+    set :show_exceptions, :after_handler
+    enable :logging
+    enable :sessions
+    use Rack::Session::Pool
+  end
 
-configure :production, :development do
-  enable :logging
-end
+  configure :development do
+    require 'sinatra/reloader'
+    register Sinatra::Reloader
+    also_reload 'models/*.rb'
+  end
 
-helpers do
-  # add your helpers here
-end
+  before do
+    puts 'request'
+  end
 
-# root page
-get "/" do
-  erb :root
+  not_found do
+    @title = "Not Found!"
+    erb :not_found, :layout => :layout
+  end
+
 end

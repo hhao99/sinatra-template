@@ -5,3 +5,5 @@ WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 RUN bundle install
 COPY . /myapp
+EXPOSE 9292
+CMD ["bundle", "exec", "rackup"]

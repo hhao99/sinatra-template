@@ -9,9 +9,10 @@ Dotenv.load
 
 configure do
   SiteConfig = OpenStruct.new(
-                 :title => 'Your Application Name',
-                 :author => 'Your Name',
-                 :url_base => 'http://localhost:4567/'
+                 :title => 'Sinatra Application Template',
+                 :app_bamne => "Sinatra Application",
+                 :author => 'Eric Hao',
+                 :url_base => 'http://localhost:9292/'
                )
 
   # load models
