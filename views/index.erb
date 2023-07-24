@@ -3,6 +3,13 @@
 <p>Here is some text.</p>
 <p>Here is a <a href='/'>link</a>.</p>
 
-<ul>
+<div>
   <h1>Sinatra Start</h1>
-</ul>
+  <div>
+    <ol>
+      <% @users.each do |user| %>
+        <li><%= user.name %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
