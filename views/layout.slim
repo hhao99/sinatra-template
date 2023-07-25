@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+doctype html
+html
+  head
+    title = @title
+    link href='main.css' rel='stylesheet' type='text/css'
+  body
+    .container
+      .header
+        .logo
+          h1 
+            a href='/' = @title
+      .content
+        == yield
+      .footer
+        p.legel &mdash; &copy; #{Timenow.strftime("Y")}  by Eric Hao &mdash;
+      

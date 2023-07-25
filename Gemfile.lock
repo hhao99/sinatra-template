@@ -9,6 +9,7 @@ GEM
     diff-lcs (1.5.0)
     dotenv (2.8.1)
     erubi (1.12.0)
+    foreman (0.87.2)
     method_source (1.0.0)
     mini_portile2 (2.8.4)
     multi_json (1.15.0)
@@ -57,9 +58,13 @@ GEM
       rack-protection (= 3.0.6)
       sinatra (= 3.0.6)
       tilt (~> 2.0)
+    slim (5.1.1)
+      temple (~> 0.10.0)
+      tilt (>= 2.1.0)
     slop (3.6.0)
     sqlite3 (1.6.3)
       mini_portile2 (~> 2.8.0)
+    temple (0.10.2)
     tilt (2.2.0)
 
 PLATFORMS
@@ -68,6 +73,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   dotenv
+  foreman
   pry
   pry-remote
   puma
@@ -78,6 +84,7 @@ DEPENDENCIES
   sequel
   sinatra
   sinatra-contrib
+  slim
   sqlite3
 
 BUNDLED WITH

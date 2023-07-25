@@ -4,11 +4,12 @@ class SiteApp < App
     end
 
     get '/' do
+        @title = "Sinatra Application"
         @users = User.all
-        erb :index
+        slim :index
     end
 
     get '/about' do
-        erb :about
+        slim :about
     end
 end
